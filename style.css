@@ -8,9 +8,28 @@ body {
     font-family: Arial, sans-serif;
     background-color: #0a0a0a;
     color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* HERO */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#modeBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #00bfff;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999;
+}
+
 .hero {
     height: 100vh;
     display: flex;
@@ -42,11 +61,14 @@ body {
     font-weight: bold;
 }
 
-/* SKILLS */
 .skills {
     padding: 60px 20px;
     text-align: center;
     background-color: #111;
+}
+
+body.light-mode .skills {
+    background-color: #f0f0f0;
 }
 
 .skills h2 {
@@ -70,27 +92,14 @@ body {
     font-weight: bold;
 }
 
-/* CONTACT */
-.contact {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 32px;
-    color: #00bfff;
-    margin-bottom: 20px;
-}
-
-.contact p {
-    font-size: 18px;
-    color: #cccccc;
-    margin-bottom: 10px;
-}/* PROJECTS */
 .projects {
     padding: 60px 20px;
     text-align: center;
     background-color: #111;
+}
+
+body.light-mode .projects {
+    background-color: #f0f0f0;
 }
 
 .projects h2 {
@@ -115,6 +124,10 @@ body {
     text-align: left;
 }
 
+body.light-mode .project-card {
+    background-color: #ffffff;
+}
+
 .project-card h3 {
     color: #00bfff;
     margin-bottom: 10px;
@@ -126,6 +139,10 @@ body {
     margin-bottom: 15px;
 }
 
+body.light-mode .project-card p {
+    color: #333333;
+}
+
 .tag {
     background-color: #00bfff;
     color: #000;
@@ -134,4 +151,65 @@ body {
     font-size: 12px;
     font-weight: bold;
     margin-right: 5px;
+}
+
+.contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 32px;
+    color: #00bfff;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+body.light-mode .contact p {
+    color: #333333;
+}
+.form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-box input,
+.form-box textarea {
+    width: 350px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #00bfff;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+body.light-mode .form-box input,
+body.light-mode .form-box textarea {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+.form-box button {
+    padding: 12px 30px;
+    background-color: #00bfff;
+    color: #000;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#formMsg {
+    font-size: 15px;
+    margin-top: 5px;
 }
