@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,15 +8,15 @@
 </head>
 <body>
 
-    <!-- HERO SECTION -->
+    <button onclick="toggleMode()" id="modeBtn">☀️ Light Mode</button>
+
     <section class="hero">
-        <h1>Hi, I'm Kwame Sexzi</h1>
+        <h1>Hi, I'm Diego</h1>
         <p>IT Student at GCTU, Accra</p>
         <p>Aspiring Software Developer</p>
         <a href="#contact" class="btn">Contact Me</a>
     </section>
 
-    <!-- SKILLS SECTION -->
     <section class="skills">
         <h2>My Skills</h2>
         <div class="skill-list">
@@ -25,39 +25,72 @@
             <span>Python</span>
             <span>Problem Solving</span>
         </div>
-    </section><!-- PROJECTS SECTION -->
+    </section>
+
     <section class="projects">
         <h2>My Projects</h2>
         <div class="project-grid">
-
             <div class="project-card">
                 <h3>Personal Portfolio</h3>
                 <p>A responsive portfolio website built with HTML and CSS.</p>
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
             </div>
-
             <div class="project-card">
                 <h3>Coming Soon</h3>
                 <p>A Python project currently in progress.</p>
                 <span class="tag">Python</span>
             </div>
-
             <div class="project-card">
                 <h3>Coming Soon</h3>
                 <p>A web app project currently in progress.</p>
                 <span class="tag">JavaScript</span>
             </div>
-
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section class="contact" id="contact">
         <h2>Contact Me</h2>
-        <p>Email: dieggowills841@gmail.com</p>
-        <p>Location: Accra, Ghana</p>
+        <p class="contact-info">📧 dieggowills841@gmail.com</p>
+        <p class="contact-info">📍 Accra, Ghana</p>
+
+        <div class="form-box">
+            <input type="text" id="nameInput" placeholder="Your Name" />
+            <input type="email" id="emailInput" placeholder="Your Email" />
+            <textarea id="messageInput" placeholder="Your Message" rows="5"></textarea>
+            <button onclick="sendMessage()">Send Message</button>
+            <p id="formMsg"></p>
+        </div>
     </section>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("light-mode");
+            const btn = document.getElementById("modeBtn");
+            if (document.body.classList.contains("light-mode")) {
+                btn.textContent = "🌙 Dark Mode";
+            } else {
+                btn.textContent = "☀️ Light Mode";
+            }
+        }
+        function sendMessage() {
+            const name = document.getElementById("nameInput").value;
+            const email = document.getElementById("emailInput").value;
+            const message = document.getElementById("messageInput").value;
+            const formMsg = document.getElementById("formMsg");
+
+            if (name === "" || email === "" || message === "") {
+                formMsg.textContent = "❌ Please fill in all fields!";
+                formMsg.style.color = "red";
+            } else {
+                formMsg.textContent = "✅ Message sent! I'll get back to you soon.";
+                formMsg.style.color = "#00bfff";
+                document.getElementById("nameInput").value = "";
+                document.getElementById("emailInput").value = "";
+                document.getElementById("messageInput").value = "";
+            }
+        }
+    </script>
 
 </body>
 </html>
